@@ -31,7 +31,7 @@ npm run gulp
   - All filneames are revisioned with an md5 hash, a `rev-manifest.json` file is genrearted and all asset references are updated in html, css, and js
   - File size reporting
   - Local production sever for testing
-- **Testing:**
+- **测试:**
   - JS test examples with Karma, Mocha, Chai, Sinon
   - Travis CI integration
 - **Deployment:**

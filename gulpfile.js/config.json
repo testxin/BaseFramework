@@ -11,25 +11,20 @@
       }
     },
 
-    "static": {
-      "src": "static",
-      "dest": "./"
-    },
-
     "js": {
-      "src": "javascripts",
-      "dest": "javascripts",
-      "extractSharedJs": true,
-      "entries": {
-        "app": ["./app.js"],
-        "page": ["./page.js"]
+      "src": "javascript",
+      "dest": "javascript",
+      "entries":{
+        "app": "main.js",
+        "react": ["react", "react-dom"]
       },
+      "extractSharedJs": true,
       "extensions": ["js"]
     },
 
     "css": {
-      "src": "stylesheets",
-      "dest": "stylesheets",
+      "src": "resource/style",
+      "dest": "resource/style",
       "autoprefixer": {
         "browsers": ["last 3 version"]
       },
@@ -42,23 +37,21 @@
     "html": {
       "src": "html",
       "dest": "./",
-      "dataFile": "data/global.json",
       "htmlmin": {
         "collapseWhitespace": true
       },
-      "extensions": ["html", "json"],
-      "excludeFolders": ["layouts", "shared", "macros", "data"]
+      "extensions": ["html", "json"]
     },
 
     "images": {
-      "src": "images",
-      "dest": "images",
+      "src": "resource/images",
+      "dest": "resource/images",
       "extensions": ["jpg", "png", "svg", "gif"]
     },
 
     "fonts": {
-      "src": "fonts",
-      "dest": "fonts",
+      "src": "resource/fonts",
+      "dest": "resource/fonts",
       "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
     },
 
@@ -67,12 +60,6 @@
       "dest": "fonts",
       "sassDest": "generated",
       "extensions": ["woff2", "woff", "eot", "ttf", "svg"]
-    },
-
-    "svgSprite": {
-      "src": "sprites",
-      "dest": "images",
-      "extensions": ["svg"]
     }
   }
 }
