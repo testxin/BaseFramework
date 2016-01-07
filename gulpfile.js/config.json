@@ -42,6 +42,14 @@
       },
       "extensions": ["html", "json"]
     },
+    "htmlmin": {
+      "src": "./public/javascript",
+      "dest": "./",
+      "htmlmin": {
+        "collapseWhitespace": true
+      },
+      "extensions": ["html"]
+    },
 
     "images": {
       "src": "resource/images",

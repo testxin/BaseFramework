@@ -2,8 +2,8 @@
 
 
 ```bash
-git clone https://github.com/vigetlabs/gulp-starter.git MyApp
-cd MyApp
+git clone https://github.com/testxin/BaseFramework.git BaseFramework
+cd BaseFramework
 npm install
 npm run gulp
 ```
@@ -16,7 +16,7 @@ npm run gulp
   - 多包
   - 分享模块
   - Source Maps
-- **JSX**: Static templating with [Nunjucks](https://mozilla.github.io/nunjucks/) and [gulp-data](https://github.com/colynb/gulp-data)
+- **React**: 
 - **Images:**
   - **SVG Sprites**: Compiles a spritesheet from a folder of SVGs
   - Compression with image-min
@@ -34,8 +34,6 @@ npm run gulp
 - **测试:**
   - JS test examples with Karma, Mocha, Chai, Sinon
   - Travis CI integration
-- **Deployment:**
-  - Quickly deploy `public` folder to gh-pages (`gulp deploy` task)
+
   
-借鉴于gulp-starter
 

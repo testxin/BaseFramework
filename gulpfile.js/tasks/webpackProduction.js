@@ -10,6 +10,7 @@ var webpackProductionTask = function(callback) {
   webpack(config, function(err, stats) {
     logger(err, stats)
     callback()
+    require('./htmlmin')();
   })
 }
 

@@ -6,7 +6,6 @@ var webpack = require('webpack')
 var webpackManifest = require('./webpackManifest')
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var node_modules = path.resolve('./', 'node_modules');
-
 var Promise = require('es6-promise').Promise;
 
 var deps = [
@@ -30,7 +29,7 @@ module.exports = function (env) {
         plugins: [],
         resolve: {
             root: jsSrc,
-            alias:[],
+            alias: [],
             extensions: [''].concat(extensions)
         },
         module: {
@@ -40,15 +39,19 @@ module.exports = function (env) {
                     loader: 'babel',
                     exclude: /node_modules/,
                     query: {
+                        comments:false,
+                        shouldPrintComment:false,
+                        plugins: ['transform-runtime'],
                         presets: ['react', 'es2015']
                     }
+
                 },
                 {
-                    test: /\.css$/, // Only .css files
-                    loader: 'style!css' // Run both loaders
+                    test: /\.scss$/,
+                    loaders: ['style', 'css', 'sass']
                 }
             ],
-            noParse:[]
+            noParse: []
         }
     }
 
@@ -111,8 +114,8 @@ module.exports = function (env) {
     deps.forEach(function (dep) {
         var depPath = path.resolve(node_modules, dep);
 
-        console.log('node_modules======='+node_modules);
-        console.log('depPath     ======='+depPath);
+        // console.log('node_modules======='+node_modules);
+        //console.log('depPath     ======='+depPath);
 
         webpackConfig.resolve.alias[dep.split(path.sep)[0]] = depPath;
         webpackConfig.module.noParse.push(depPath);
