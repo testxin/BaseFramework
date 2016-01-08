@@ -17,9 +17,9 @@ export default class Button extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    getInitialState() {
+   /* getInitialState() {
         return {liked: false};
-    }
+    }*/
 
     handleClick(event) {
         this.setState({liked: !this.state.liked});
