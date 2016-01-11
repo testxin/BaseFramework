@@ -15,11 +15,13 @@ export default class Button extends React.Component {
         };
         // Bind callback methods to make `this` the correct context.
         this.handleClick = this.handleClick.bind(this);
+
     }
 
-   /* getInitialState() {
-        return {liked: false};
-    }*/
+
+    /* getInitialState() {
+     return {liked: false};
+     }*/
 
     handleClick(event) {
         this.setState({liked: !this.state.liked});
@@ -29,7 +31,7 @@ export default class Button extends React.Component {
         var text = this.state.liked ? 'like' : 'haven\'t liked';
 
         return <p onClick={this.handleClick}>
-            You {text} this. Click to toggle.
+            You {text} this. Click to {this.props.value} toggle.
         </p>;
     };
 }

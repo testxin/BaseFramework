@@ -6,6 +6,8 @@ import ReactDom from 'react-dom'
 import Hello from '../components/helloword.jsx'
 import Button from '../components/button.jsx'
 import Profile from '../components/profile.jsx'
+import 'antd/lib/index.css'
+import  { DatePicker }  from 'antd'
 
 
 ReactDom.render(<Hello date={new Date()}/>, document.getElementById('app'));
@@ -38,3 +40,5 @@ ReactDom.render(<Button/>,document.getElementById('app3'));
 //组合组件
 
 ReactDom.render(<Profile username="tester" imgUrl="resource/images/icon.png"  />,document.getElementById('app4'));
+
+ReactDom.render(<DatePicker />,document.getElementById('app5'));

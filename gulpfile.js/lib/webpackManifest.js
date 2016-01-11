@@ -9,11 +9,14 @@ module.exports = function (publicPath, dest, filename) {
             var stats = stats.toJson()
             var chunks = stats.assetsByChunkName
             var manifest = {}
-
+            console.log('chunks======='+JSON.stringify(chunks));
             for (var key in chunks) {
                 var originalFilename = key + '.js'
-                manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key])
+                console.log('key======='+key);
+
+                manifest[path.join(publicPath, originalFilename)] = path.join(publicPath, chunks[key].toString())
             }
+            console.log('manifest======='+JSON.stringify(manifest));
 
             fs.writeFileSync(
                 path.join(process.cwd(), dest, filename),
