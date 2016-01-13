@@ -18,10 +18,19 @@ export default class Button extends React.Component {
 
     }
 
+    /***
+     *
+     */
+    getInitialState(){
 
-    /* getInitialState() {
-     return {liked: false};
-     }*/
+        console.log('getDefaultProps======')
+        return  {liked: false};
+    }
+    getDefaultProps() {
+
+        console.log('getDefaultProps======')
+        return {liked: false};
+    }
 
     handleClick(event) {
         this.setState({liked: !this.state.liked});
