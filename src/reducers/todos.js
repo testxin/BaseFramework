@@ -1,4 +1,6 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes'
+import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED
+    ,FETCH_POSTS_REQUEST,FETCH_POSTS_FAILURE,FETCH_POSTS_SUCCESS} from '../constants/ActionTypes'
+
 
 const initialState = [
     {
@@ -11,8 +13,8 @@ const initialState = [
 export default function todos(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO:
-            console.log('action.text===='+action.text)
-
+           var id= state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
+            console.log("id====="+id);
             return [
                 {
                     id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
@@ -23,7 +25,6 @@ export default function todos(state = initialState, action) {
             ]
 
         case DELETE_TODO:
-            console.log('action.text11111===='+action.id)
 
 
             return state.filter(todo =>
@@ -32,7 +33,6 @@ export default function todos(state = initialState, action) {
 
         case EDIT_TODO:
 
-            console.log('action.text111222211===='+action.text)
 
             return state.map(todo =>
                 todo.id === action.id ?
@@ -41,7 +41,6 @@ export default function todos(state = initialState, action) {
             )
 
         case COMPLETE_TODO:
-            console.log('action.3333333===='+action.text)
 
             return state.map(todo =>
                 todo.id === action.id ?
@@ -56,10 +55,17 @@ export default function todos(state = initialState, action) {
             }))
 
         case CLEAR_COMPLETED:
-            console.log('action.4444444444===='+action.text)
-
 
             return state.filter(todo => todo.completed === false)
+
+
+        case FETCH_POSTS_REQUEST:
+
+            return state.map(todo =>
+                todo.id === action.id ?
+                    Object.assign({}, todo, {completed: !todo.completed}) :
+                    todo
+            )
 
         default:
             return state

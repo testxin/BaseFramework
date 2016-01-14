@@ -3,7 +3,8 @@ import rootReducer from '../reducers'
 
 export default function configureStore(initialState) {
   const store = createStore(rootReducer, initialState)
-  console.log('store====='+JSON.stringify(store));
+  var store0=store.getState();
+  console.log('store0====='+JSON.stringify(store0));
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('../reducers', () => {
