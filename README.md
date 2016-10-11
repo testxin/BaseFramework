@@ -5,7 +5,7 @@
 git clone https://github.com/testxin/BaseFramework.git BaseFramework
 cd BaseFramework
 npm install
-npm run gulp
+npm run gulp 
 ```
 
 ## 特性
